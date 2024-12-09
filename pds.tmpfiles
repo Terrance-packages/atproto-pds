@@ -1,0 +1,2 @@
+d /var/lib/pds 0750 pds pds -
+f /etc/pds.env 0640 root pds -

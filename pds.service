@@ -1,0 +1,12 @@
+[Unit]
+Description=AT Protocol PDS
+
+[Service]
+User=pds
+Group=pds
+WorkingDirectory=/var/lib/pds
+EnvironmentFile=/etc/pds.env
+ExecStart=/usr/bin/pds
+
+[Install]
+WantedBy=multi-user.target
