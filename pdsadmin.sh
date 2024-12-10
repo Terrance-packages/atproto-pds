@@ -1,7 +1,13 @@
 #!/usr/bin/env sh
 
+cd /usr/lib/atproto-pdsadmin
+
 cmd="$1"
 shift
 
-[ -f "$0-$cmd" ] || cmd=help
-exec "$0-$cmd" "$@"
+if [ "${cmd#*/}" != "$cmd" ] || [ ! -f "$cmd.sh" ]; then
+    ./help.sh
+    exit 1
+fi
+
+exec "./$cmd.sh" "$@"

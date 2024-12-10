@@ -17,7 +17,7 @@ source=(
 )
 md5sums=(
   SKIP
-  6d7edfbec25489a8be69ba66753afa04
+  6f8dd2c85a0ee59ed4209e059ff84040
   d1c418dcce88825a1df3a2c53953f2ea
   1428828b56dbcb0e7ffaf91b6ce13657
   255bc1f00bfd37afe0c683a46028f049
@@ -43,9 +43,10 @@ EOF
 }
 
 package() {
-  mkdir -p "$pkgdir/etc" "$pkgdir/usr/bin" "$pkgdir/usr/lib"
+  mkdir -p "$pkgdir"/{etc,usr/{bin,lib/atproto-pds{,admin}}}
   # Add library files
-  cp -ar "$srcdir/pds/service/" "$pkgdir/usr/lib/atproto-pds/"
+  install -Dm 0644 "$srcdir/pds/service/index.js" "$pkgdir/usr/lib/atproto-pds/"
+  cp -ar "$srcdir/pds/service/node_modules" "$pkgdir/usr/lib/atproto-pds/"
   # Add entrypoint script for pds application
   cat >"$pkgdir/usr/bin/pds" <<EOF
 #!/usr/bin/env sh
@@ -55,7 +56,7 @@ EOF
   chmod +x "$pkgdir/usr/bin/pds"
   # Add pdsadmin scripts
   for script in "$srcdir/pds/pdsadmin"/*.sh; do
-    target="$pkgdir/usr/bin/pdsadmin-$(basename "${script%.*}")"
+    target="$pkgdir/usr/lib/atproto-pdsadmin/$(basename "$script")"
     install -Dm 0755 "$script" "$target"
     sed -i 's!/pds/pds.env!/etc/pds.env!g' "$target"
   done
