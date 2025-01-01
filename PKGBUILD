@@ -21,8 +21,9 @@ md5sums=(
   d1c418dcce88825a1df3a2c53953f2ea
   1428828b56dbcb0e7ffaf91b6ce13657
   255bc1f00bfd37afe0c683a46028f049
-  157ab2cc7800ec447b2a4508df8867b2
+  44a260c5bc36e339ed66f026238520ad
 )
+install="$pkgname.install"
 backup=(etc/pds.env)
 
 build() {

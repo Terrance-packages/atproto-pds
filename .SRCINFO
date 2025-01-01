@@ -3,6 +3,7 @@ pkgbase = atproto-pds
 	pkgver = 0.4.74
 	pkgrel = 1
 	url = https://github.com/bluesky-social/pds
+	install = atproto-pds.install
 	arch = x86_64
 	arch = aarch64
 	license = MIT
@@ -21,6 +22,6 @@ pkgbase = atproto-pds
 	md5sums = d1c418dcce88825a1df3a2c53953f2ea
 	md5sums = 1428828b56dbcb0e7ffaf91b6ce13657
 	md5sums = 255bc1f00bfd37afe0c683a46028f049
-	md5sums = 157ab2cc7800ec447b2a4508df8867b2
+	md5sums = 44a260c5bc36e339ed66f026238520ad
 
 pkgname = atproto-pds
