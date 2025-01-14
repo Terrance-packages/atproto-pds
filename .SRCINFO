@@ -12,12 +12,14 @@ pkgbase = atproto-pds
 	depends = nodejs
 	backup = etc/pds.env
 	source = git+https://github.com/bluesky-social/pds.git#tag=v0.4.74
+	source = pds.sh
 	source = pdsadmin.sh
 	source = pds.service
 	source = pds.sysusers
 	source = pds.tmpfiles
 	source = pds.env
 	md5sums = SKIP
+	md5sums = a8c172c210f7284ed51b5784abdeebdd
 	md5sums = 6f8dd2c85a0ee59ed4209e059ff84040
 	md5sums = d1c418dcce88825a1df3a2c53953f2ea
 	md5sums = 1428828b56dbcb0e7ffaf91b6ce13657

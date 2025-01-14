@@ -9,6 +9,7 @@ depends=(nodejs)
 makedepends=(npm)
 source=(
   "git+https://github.com/bluesky-social/pds.git#tag=v$pkgver"
+  pds.sh
   pdsadmin.sh
   pds.service
   pds.sysusers
@@ -17,6 +18,7 @@ source=(
 )
 md5sums=(
   SKIP
+  a8c172c210f7284ed51b5784abdeebdd
   6f8dd2c85a0ee59ed4209e059ff84040
   d1c418dcce88825a1df3a2c53953f2ea
   1428828b56dbcb0e7ffaf91b6ce13657
@@ -49,12 +51,7 @@ package() {
   install -Dm 0644 "$srcdir/pds/service/index.js" "$pkgdir/usr/lib/atproto-pds/"
   cp -ar "$srcdir/pds/service/node_modules" "$pkgdir/usr/lib/atproto-pds/"
   # Add entrypoint script for pds application
-  cat >"$pkgdir/usr/bin/pds" <<EOF
-#!/usr/bin/env sh
-cd /usr/lib/atproto-pds
-node --enable-source-maps index.js
-EOF
-  chmod +x "$pkgdir/usr/bin/pds"
+  install -Dm 0755 "$srcdir/pds.sh" "$pkgdir/usr/bin/pds"
   # Add pdsadmin scripts
   for script in "$srcdir/pds/pdsadmin"/*.sh; do
     target="$pkgdir/usr/lib/atproto-pdsadmin/$(basename "$script")"
