@@ -30,12 +30,12 @@ backup=(etc/pds.env)
 
 build() {
   cd "$srcdir/pds/service"
-  # Patch newer better-sqlite3 for Node.js 23.x support
+  # Patch newer better-sqlite3 for Node.js 24.x support
   head -n-1 package.json >package.json.tmp
   cat >>package.json.tmp <<EOF
   ,"overrides": {
     "@atproto/pds": {
-      "better-sqlite3": "11.5.0"
+      "better-sqlite3": "^12.0.0"
     }
   }
 EOF
