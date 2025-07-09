@@ -2,8 +2,10 @@
 
 cd /usr/lib/atproto-pdsadmin
 
-cmd="$1"
-shift
+if [ $# -ge 1 ]; then
+    cmd="$1"
+    shift
+fi
 
 if [ "${cmd#*/}" != "$cmd" ] || [ ! -f "$cmd.sh" ]; then
     ./help.sh
