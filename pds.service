@@ -4,9 +4,31 @@ Description=AT Protocol PDS
 [Service]
 User=pds
 Group=pds
+NoNewPrivileges=yes
+CapabilityBoundingSet=
+AmbientCapabilities=
+RestrictSUIDSGID=yes
 WorkingDirectory=/var/lib/pds
 EnvironmentFile=/etc/pds.env
 ExecStart=/usr/bin/pds
+ProtectSystem=strict
+StateDirectory=pds
+ProtectHome=yes
+ProtectClock=yes
+ProtectControlGroups=yes
+ProtectHostname=yes
+ProtectKernelLogs=yes
+ProtectKernelModules=yes
+ProtectKernelTunables=yes
+ProtectProc=noaccess
+ProcSubset=pid
+LockPersonality=yes
+RestrictNamespaces=yes
+RestrictRealtime=yes
+PrivateDevices=yes
+PrivateUsers=self
+PrivateTmp=yes
+RestrictAddressFamilies=AF_INET AF_INET6
 
 [Install]
 WantedBy=multi-user.target
