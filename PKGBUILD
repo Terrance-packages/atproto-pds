@@ -1,5 +1,5 @@
 pkgname=atproto-pds
-pkgver=0.4.169
+pkgver=0.4.182
 pkgrel=1
 pkgdesc='AT Protocol PDS (Personal Data Server)'
 url='https://github.com/bluesky-social/pds'
