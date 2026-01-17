@@ -1,7 +1,7 @@
 pkgbase = atproto-pds
 	pkgdesc = AT Protocol PDS (Personal Data Server)
-	pkgver = 0.4.193
-	pkgrel = 2
+	pkgver = 0.4.204
+	pkgrel = 1
 	url = https://github.com/bluesky-social/pds
 	install = atproto-pds.install
 	arch = x86_64
@@ -11,7 +11,7 @@ pkgbase = atproto-pds
 	makedepends = npm
 	depends = nodejs
 	backup = etc/pds.env
-	source = git+https://github.com/bluesky-social/pds.git#tag=v0.4.193
+	source = git+https://github.com/bluesky-social/pds.git#tag=v0.4.204
 	source = pds.sh
 	source = pdsadmin.sh
 	source = pds.service

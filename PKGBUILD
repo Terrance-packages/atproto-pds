@@ -1,6 +1,6 @@
 pkgname=atproto-pds
-pkgver=0.4.193
-pkgrel=2
+pkgver=0.4.204
+pkgrel=1
 pkgdesc='AT Protocol PDS (Personal Data Server)'
 url='https://github.com/bluesky-social/pds'
 license=(MIT Apache-2.0)
