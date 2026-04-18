@@ -6,7 +6,7 @@ url='https://github.com/bluesky-social/pds'
 license=(MIT Apache-2.0)
 arch=(x86_64 aarch64)
 depends=(nodejs)
-makedepends=(npm)
+makedepends=(pnpm)
 source=(
   "git+https://github.com/bluesky-social/pds.git#tag=v$pkgver"
   pds.sh
@@ -33,8 +33,8 @@ build() {
   # Patch newer better-sqlite3 for Node.js 25.x support
   head -n-1 package.json >package.json.tmp
   cat >>package.json.tmp <<EOF
-  ,"overrides": {
-    "@atproto/pds": {
+  ,"pnpm": {
+    "overrides": {
       "better-sqlite3": "^12.4.5"
     }
   }
@@ -42,7 +42,7 @@ EOF
   tail -n1 package.json >>package.json.tmp
   mv package.json.tmp package.json
   # Install library files
-  npm install
+  pnpm install --production --no-frozen-lockfile
 }
 
 package() {
