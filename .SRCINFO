@@ -8,7 +8,7 @@ pkgbase = atproto-pds
 	arch = aarch64
 	license = MIT
 	license = Apache-2.0
-	makedepends = npm
+	makedepends = pnpm
 	depends = nodejs
 	backup = etc/pds.env
 	source = git+https://github.com/bluesky-social/pds.git#tag=v0.4.219
