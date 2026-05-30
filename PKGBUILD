@@ -31,16 +31,10 @@ backup=(etc/pds.env)
 build() {
   cd "$srcdir/pds/service"
   # Patch newer better-sqlite3 for Node.js 26.x support
-  head -n1 package.json >package.json.tmp
-  cat >>package.json.tmp <<'  EOF'
-  "pnpm": {
-    "overrides": {
-      "better-sqlite3": "^12.10.0"
-    }
-  },
-  EOF
-  tail -n+2 package.json >>package.json.tmp
-  mv package.json.tmp package.json
+  cat >pnpm-workspace.json <<EOF
+overrides:
+  better-sqlite3: "^12.10.0"
+EOF
   # Install library files
   pnpm install --production --no-frozen-lockfile
 }
