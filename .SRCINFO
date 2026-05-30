@@ -1,7 +1,7 @@
 pkgbase = atproto-pds
 	pkgdesc = AT Protocol PDS (Personal Data Server)
-	pkgver = 0.4.219
-	pkgrel = 2
+	pkgver = 0.4.5001
+	pkgrel = 1
 	url = https://github.com/bluesky-social/pds
 	install = atproto-pds.install
 	arch = x86_64
@@ -11,19 +11,19 @@ pkgbase = atproto-pds
 	makedepends = pnpm
 	depends = nodejs
 	backup = etc/pds.env
-	source = git+https://github.com/bluesky-social/pds.git#tag=v0.4.219
+	source = git+https://github.com/bluesky-social/pds.git#tag=v0.4.5001
 	source = pds.sh
 	source = pdsadmin.sh
 	source = pds.service
 	source = pds.sysusers
 	source = pds.tmpfiles
 	source = pds.env
-	md5sums = SKIP
-	md5sums = a8c172c210f7284ed51b5784abdeebdd
-	md5sums = 6e6a5977c033335fc6b9dd5dfb755530
-	md5sums = f95b4112b45a5fbaeb7e2fcd3a9be930
-	md5sums = 1428828b56dbcb0e7ffaf91b6ce13657
-	md5sums = 255bc1f00bfd37afe0c683a46028f049
-	md5sums = 44a260c5bc36e339ed66f026238520ad
+	sha256sums = a8ed21a0a024fd8d9d5a5be8e3b60b1d7be5b25d3b91bf25c2541fecaa556ac5
+	sha256sums = 8db83f5e10377fe00577e68c96281a1d1a4ae727e0bc4cca106f8b2785d93ee7
+	sha256sums = 7e4472e1daf25a384726ff725371db3c3ceca09804553043039d9605d7408f38
+	sha256sums = dc420b300e9c691b5d01a5a384acd9a7e0afe3777b5a97ecd0e0ff07c80b9edc
+	sha256sums = 50117f8e0f2734bdfa1e261998391c0be9184a02a7871aa3a9a4dba96f2fcc3c
+	sha256sums = 62203e9d8b17fbfb34901a32d612ad7884fec175aae5227e8067b01257ac9640
+	sha256sums = 4ed02ea0b523e345939bfe6f756eff9e8d5ca0f31f7a3e2c9f6994f119dd4039
 
 pkgname = atproto-pds

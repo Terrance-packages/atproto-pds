@@ -1,6 +1,6 @@
 pkgname=atproto-pds
-pkgver=0.4.219
-pkgrel=2
+pkgver=0.4.5001
+pkgrel=1
 pkgdesc='AT Protocol PDS (Personal Data Server)'
 url='https://github.com/bluesky-social/pds'
 license=(MIT Apache-2.0)
@@ -16,15 +16,13 @@ source=(
   pds.tmpfiles
   pds.env
 )
-md5sums=(
-  SKIP
-  a8c172c210f7284ed51b5784abdeebdd
-  6e6a5977c033335fc6b9dd5dfb755530
-  f95b4112b45a5fbaeb7e2fcd3a9be930
-  1428828b56dbcb0e7ffaf91b6ce13657
-  255bc1f00bfd37afe0c683a46028f049
-  44a260c5bc36e339ed66f026238520ad
-)
+sha256sums=('a8ed21a0a024fd8d9d5a5be8e3b60b1d7be5b25d3b91bf25c2541fecaa556ac5'
+            '8db83f5e10377fe00577e68c96281a1d1a4ae727e0bc4cca106f8b2785d93ee7'
+            '7e4472e1daf25a384726ff725371db3c3ceca09804553043039d9605d7408f38'
+            'dc420b300e9c691b5d01a5a384acd9a7e0afe3777b5a97ecd0e0ff07c80b9edc'
+            '50117f8e0f2734bdfa1e261998391c0be9184a02a7871aa3a9a4dba96f2fcc3c'
+            '62203e9d8b17fbfb34901a32d612ad7884fec175aae5227e8067b01257ac9640'
+            '4ed02ea0b523e345939bfe6f756eff9e8d5ca0f31f7a3e2c9f6994f119dd4039')
 install="$pkgname.install"
 backup=(etc/pds.env)
 
@@ -42,7 +40,7 @@ EOF
 package() {
   mkdir -p "$pkgdir"/{etc,usr/{bin,lib/atproto-pds{,admin}}}
   # Add library files
-  install -Dm 0644 "$srcdir/pds/service/index.js" "$pkgdir/usr/lib/atproto-pds/"
+  install -Dm 0644 "$srcdir/pds/service/index.ts" "$pkgdir/usr/lib/atproto-pds/"
   cp -ar "$srcdir/pds/service/node_modules" "$pkgdir/usr/lib/atproto-pds/"
   # Add entrypoint script for pds application
   install -Dm 0755 "$srcdir/pds.sh" "$pkgdir/usr/bin/pds"
